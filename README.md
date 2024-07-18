@@ -53,4 +53,14 @@ Morgan instead of requestLogger, edit `app.js`
 ```
 const morgan = require('morgan')
 
+app.use(morgan((tokens, req, res) => {
+  return [
+    tokens.method(req, res),
+    tokens.url(req, res),
+    tokens.status(req, res),
+    tokens.res(req, res, 'content-length'), '-',
+    tokens['response-time'](req, res), 'ms',
+    req.method === 'POST' ? JSON.stringify(req.body) : ''
+  ].join(' ')
+}))
 ```
