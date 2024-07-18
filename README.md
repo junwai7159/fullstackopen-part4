@@ -31,7 +31,7 @@ SECRET=your_string
 
 ### 5. Create `app.js` file
 
-### 6. Add npm run scripts to `package.json` file （for future use）
+### 6. Add npm run scripts to `package.json` file （for future usage）
 ```
 "scripts": {
   "start": "cross-env NODE_ENV=production node index.js",
